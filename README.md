@@ -44,3 +44,13 @@ Several volumes are created to manage the storage.
 - Storages: inspectIT allows to persist invocation sequences in so-called storages. All storages are kept on the server in the folder *storage*
 - Server Configuration: Configuration entries are stored below the folder *config*
 - Agent configurations: (not integrated yet) The central server stores the instrumentation and configuration for the agents. The folder *ci* is used as root folder.
+
+## Checking log output
+Easiest way to check the log output is to use
+```
+sudo docker logs inspectIT-CMR
+```
+If you want deeper control, connect to the running container with a shell (note this only works with docker v3 and higher)
+```
+sudo docker exec -it inspectIT-CMR /bin/bash
+```
