@@ -4,7 +4,7 @@ This docker file bundles the central server of the open source APM solution (www
 ## Starting
 The easiest way of starting the CMR is to execute
 ```
-sudo docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 inspectit/CMR
+sudo docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 inspectit/cmr
 ```
 This starts a CMR with default configuration (meaningful for most setups). The image is created with all necessary volumes to provide persistent data storage. (see the volumes section for more detail)
 
@@ -19,7 +19,7 @@ file. You need a docker installation or the - fantastic - boot2docker if you are
 Some people like to run Docker images with volumnes being mounted to the host system. Personally I think this is bad practise as this hinders one of the core strength of Docker: portability, but sure this is a possible setup. Advantage is that you have the persistent data easily accessible from your host.
 To run the image in this fashion, run
 ```
-sudo docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 -v [local-folder]:/CMR/db -v [local-folder]:/CMR/storage inspectit/CMR
+sudo docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 -v [local-folder]:/CMR/db -v [local-folder]:/CMR/storage inspectit/cmr
 ```
 
 ## Running with additional data container
@@ -30,7 +30,7 @@ sudo docker run -d --name inspectIT-CMR-Data -v /CMR/db -v /CMR/storages -v /CMR
 ```
 2) Start the service container and use the volumes of the data container
 ```
-sudo docker run -d --name inspectIT-CMR -volumes-from="inspectIT-CMR-Data" -p 8182:8182 -p 9070:9070 inspectit/CMR
+sudo docker run -d --name inspectIT-CMR -volumes-from="inspectIT-CMR-Data" -p 8182:8182 -p 9070:9070 inspectit/cmr
 ```
 3) Backup / Access data / etc
 (work in progress)
