@@ -12,6 +12,15 @@ This starts a CMR with default configuration (meaningful for most setups). The i
 
 ## Configuration
 
+### Adjusting the buffer size
+The inspectIT CMR keeps most of its data in a memory buffer, the default size is set to 1.5 GB. You can change the size by setting the environment variable BUFFER_SIZE:
+
+```bash
+$ docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 -e BUFFER_SIZE=6000 inspectit/cmr
+```
+
+This will set the buffer size to 6000 MB. **Warning:** Never set the buffer size larger than the available system memory!
+
 ### Running with additional data container
 Best practice at least for the current development state of Docker is to separate the service from the data by two different containers. This approach allows to keep track of the data by the data container. 
 
