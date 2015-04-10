@@ -8,7 +8,9 @@ The easiest way of starting the CMR is to execute
 $ docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 inspectit/cmr
 ```
 
-This starts a CMR with default configuration (meaningful for most setups). The image is created with all necessary volumes to provide persistent data storage. (see the volumes section for more detail)
+This starts a CMR with default configuration (meaningful for most setups). The image is created with all necessary volumes to provide persistent data storage. (see the [volumes section](#volumes) for more detail)
+
+Now get the inspectIT client from our [download page](http://www.inspectit.eu/download-inspectit/), remember to choose the correct version (Windows, Linux or Mac, 32bit or 64bit). **The release version has to match the version of your CMR** (see section [Running a specific version of the CMR](#running-a-specific-version-of-the-cmr))
 
 ## Configuration
 
@@ -27,7 +29,7 @@ Best practice at least for the current development state of Docker is to separat
 1) Start the data container.
 
 ```bash
-$ docker run -d --name inspectIT-CMR-Data -v /CMR/db -v /CMR/storages -v /CMR/config busybox /bin/sh
+$ docker run -d --name inspectIT-CMR-Data -v /CMR/db -v /CMR/storages -v /CMR/config inspectit/cmr true
 ```
 
 2) Start the service container and use the volumes of the data container
@@ -40,7 +42,7 @@ $ docker run -d --name inspectIT-CMR -volumes-from="inspectIT-CMR-Data" -p 8182:
 (work in progress)
 
 ### Running with externally mapped volumes
-Some people like to run Docker images with volumnes being mounted to the host system. Personally I think this is bad practise as this hinders one of the core strength of Docker: portability, but sure this is a possible setup. Advantage is that you have the persistent data easily accessible from your host.
+Some people like to run Docker images with volumes being mounted to the host system. Personally, I think this is bad practise as this hinders one of the core strength of Docker: portability, but sure this is a possible setup. Advantage is that you have the persistent data easily accessible from your host.
 To run the image in this fashion, run
 
 ```bash
@@ -48,7 +50,7 @@ $ docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 -v [local-folder]
 ```
 
 ### Running a specific version of the CMR
-(work in progress)
+Currently, the version of the CMR is always the latest beta release. The stable release is coming soon. 
 
 ### Volumes
 Several volumes are created to manage the storage.
@@ -64,11 +66,20 @@ Easiest way to check the log output is to use
 $ docker logs inspectIT-CMR
 ```
 
-If you want deeper control, connect to the running container with a shell (note this only works with docker 1.3 and higher)
+If you want deeper control, connect to the running container with a shell (note: this only works with docker 1.3 and higher)
 
 ```bash
-$ docker exec -it inspectIT-CMR /bin/bash
+$ docker exec -it inspectIT-CMR /bin/sh
 ```
+
+## InspectIT agent
+The CMR collects performance data from the inspectIT agent. There are already some preconfigured docker images available:
+- [Jetty](https://registry.hub.docker.com/u/inspectit/jetty/)
+- [GlassFish](https://registry.hub.docker.com/u/inspectit/glassfish/)
+- JBoss (work in progress)
+- Tomcat (coming soon)
+
+If you have another server, for example Weblogic, please refer to our [documentation](https://documentation.novatec-gmbh.de/display/INSPECTIT/Installation+Weblogic) or write a comment.
 
 ## Build the docker image
 If you want to build the inspectIT CMR image yourself, checkout this repository and run 
