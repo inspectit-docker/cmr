@@ -82,10 +82,16 @@ The CMR collects performance data from the inspectIT agent. There are already so
 If you have another server, for example Weblogic, please refer to our [documentation](https://documentation.novatec-gmbh.de/display/INSPECTIT/Installation+Weblogic) or write a comment.
 
 ## Build the docker image
-If you want to build the inspectIT CMR image yourself, checkout this repository and run 
+If you want to build the inspectIT CMR image yourself, checkout our repository and run 
 
 ```bash
 $ docker build -t inspectit/cmr .
 ```
 
 You need a docker installation or the - fantastic - boot2docker if you are on Windows or Mac
+
+## Issues
+If you have problems with this image or any questions feel free to create an [issue](https://github.com/inspectIT/docker-CMR/issues/new) or leave a comment below.
+
+## Contributions
+If you wan't to contribute to this image, please look at the sources at [github](https://github.com/inspectIT/docker-CMR) and send us a pull request.
