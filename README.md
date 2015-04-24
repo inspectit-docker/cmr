@@ -50,7 +50,7 @@ $ docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 -v [local-folder]
 ```
 
 ### Running a specific version of the CMR
-Currently, the version of the CMR is always the latest beta release. The stable release is coming soon. 
+The image inspectit/cmr:latest always refers to the latest beta version of inspectIT. If you want the latest stable build, please use the image inspectit/cmr:stable. You can also use a numeric version, please see the available tags. 
 
 ### Volumes
 Several volumes are created to manage the storage.
