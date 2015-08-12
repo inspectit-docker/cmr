@@ -10,7 +10,7 @@ $ docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 inspectit/cmr
 
 This starts a CMR with default configuration (meaningful for most setups). The image is created with all necessary volumes to provide persistent data storage. (see the [volumes section](#volumes) for more detail)
 
-Now get the inspectIT client from our [download page](http://www.inspectit.eu/download-inspectit/), remember to choose the correct version (Windows, Linux or Mac, 32bit or 64bit). **The release version has to match the version of your CMR** (see section [Running a specific version of the CMR](#running-a-specific-version-of-the-cmr))
+Now get the inspectIT client from our [download page](http://www.inspectit.eu/download-inspectit/), remember to choose the correct version (Windows, Linux or Mac, 32bit or 64bit). **The release version has to match the version of your CMR** (see section "Running a specific version of the CMR" [below](#running-a-specific-version-of-the-cmr))
 
 ## Configuration
 
@@ -50,7 +50,9 @@ $ docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 -v [local-folder]
 ```
 
 ### Running a specific version of the CMR
-The image inspectit/cmr:latest always refers to the latest beta version of inspectIT. If you want the latest stable build, please use the image inspectit/cmr:stable. You can also use a numeric version, please see the available tags. 
+The image inspectit/cmr:latest always refers to the latest beta version of inspectIT. If you want the latest stable build, please use the image inspectit/cmr:stable. You can also use a numeric version, please see the available tags.
+
+**Important:** The inspectIT agent version has to match _exactly_ the version of inspectIT CMR! A version check will be implemented in release 1.7
 
 ### Volumes
 Several volumes are created to manage the storage.
@@ -74,10 +76,10 @@ $ docker exec -it inspectIT-CMR /bin/sh
 
 ## InspectIT agent
 The CMR collects performance data from the inspectIT agent. There are already some preconfigured docker images available:
-- [Jetty](https://registry.hub.docker.com/u/inspectit/jetty/)
-- [GlassFish](https://registry.hub.docker.com/u/inspectit/glassfish/)
-- JBoss (work in progress)
-- Tomcat (coming soon)
+- [Jetty](https://hub.docker.com/r/inspectit/jetty/)
+- [GlassFish](https://hub.docker.com/r/inspectit/glassfish/)
+- [JBoss](https://hub.docker.com/r/inspectit/jboss/)
+- [Tomcat](https://hub.docker.com/r/inspectit/tomcat/)
 
 If you have another server, for example Weblogic, please refer to our [documentation](https://documentation.novatec-gmbh.de/display/INSPECTIT/Installation+Weblogic) or write a comment.
 
@@ -91,7 +93,7 @@ $ docker build -t inspectit/cmr .
 You need a docker installation or the - fantastic - boot2docker if you are on Windows or Mac
 
 ## Issues
-If you have problems with this image or any questions feel free to create an [issue](https://github.com/inspectIT/docker-CMR/issues/new) or leave a comment below.
+If you have problems with this image or any questions feel free to create an [issue](https://github.com/inspectit-docker/cmr/issues/new) or leave a comment below.
 
 ## Contributions
-If you wan't to contribute to this image, please look at the sources at [github](https://github.com/inspectIT/docker-CMR) and send us a pull request.
+If you wan't to contribute to this image, please look at the sources at [github](https://github.com/inspectit-docker/cmr) and send us a pull request.
