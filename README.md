@@ -50,7 +50,7 @@ $ docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 -v [local-folder]
 ```
 
 ### Running a specific version of the CMR
-The image inspectit/cmr:latest always refers to the latest beta version of inspectIT. If you want the latest stable build, please use the image inspectit/cmr:stable. You can also use a numeric version, please see the available tags.
+The image inspectit/cmr:latest always refers to the latest beta version of inspectIT. If you want the stable build (currently 1.5.x) or a specific version, please use the corresponding version tag instead of latest.
 
 **Important:** The inspectIT agent version has to match _exactly_ the version of inspectIT CMR! A version check will be implemented in release 1.7
 
