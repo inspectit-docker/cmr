@@ -54,7 +54,7 @@ $ docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 -v [local-folder]
 ### Running a specific version of the CMR
 The image inspectit/cmr:latest always refers to the latest beta version of inspectIT. If you want the stable build (currently 1.5.x) or a specific version, please use the corresponding version tag instead of latest.
 
-**Important:** The inspectIT agent version has to match _exactly_ the version of inspectIT CMR! A version check will be implemented in release 1.7
+**Important:** The inspectIT agent version has to match _exactly_ the version of inspectIT CMR! A version check is implemented since 1.6.3.
 
 ### Volumes
 Several volumes are created to manage the storage.
@@ -83,7 +83,7 @@ The CMR collects performance data from the inspectIT agent. There are already so
 - [JBoss](https://hub.docker.com/r/inspectit/jboss/)
 - [Tomcat](https://hub.docker.com/r/inspectit/tomcat/)
 
-If you have another server, for example Weblogic, please refer to our [documentation](https://documentation.novatec-gmbh.de/display/INSPECTIT/Installation+Weblogic) or write a comment.
+If you have another server, for example Weblogic, please refer to our [documentation](https://inspectit-performance.atlassian.net/wiki/display/DOC16/Installation+Weblogic) or write a comment.
 
 ## Build the docker image
 If you want to build the inspectIT CMR image yourself, checkout our repository and run 
