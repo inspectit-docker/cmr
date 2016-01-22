@@ -4,5 +4,5 @@ if [ ${BUFFER_SIZE+x} ];then
 	sed -i "s/Xms1536/Xms$BUFFER_SIZE/" startup.sh
 	sed -i "s/Xmx1536/Xmx$BUFFER_SIZE/" startup.sh
 fi
-sh startup.sh
+exec sh startup.sh
 
