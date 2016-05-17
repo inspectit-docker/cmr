@@ -1,7 +1,7 @@
 [![](https://badge.imagelayers.io/inspectit/cmr:latest.svg)](https://imagelayers.io/?images=inspectit/cmr:latest 'Get your own badge on imagelayers.io')
 
 # Dockerfile for inspectIT APM solution
-This docker file bundles the central server of the open source APM solution [www.inspectit.eu](http://www.inspectit.eu). 
+This docker file bundles the central server of the open source APM solution [www.inspectit.rocks](http://www.inspectit.rocks). 
 
 ## Quick Start
 The easiest way of starting the CMR is to execute
@@ -12,7 +12,7 @@ $ docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 inspectit/cmr
 
 This starts a CMR with default configuration (meaningful for most setups). The image is created with all necessary volumes to provide persistent data storage. (see the [volumes section](#volumes) for more detail)
 
-Now get the inspectIT client from our [download page](http://www.inspectit.eu/download-inspectit/), remember to choose the correct version (Windows, Linux or Mac, 32bit or 64bit). **The release version has to match the version of your CMR** (see section "Running a specific version of the CMR" [below](#running-a-specific-version-of-the-cmr))
+Now get the inspectIT client from our [download page](http://www.inspectit.rocks/#downloads), remember to choose the correct version (Windows, Linux or Mac, 32bit or 64bit). **The release version has to match the version of your CMR** (see section "Running a specific version of the CMR" [below](#running-a-specific-version-of-the-cmr))
 
 ## Configuration
 
