@@ -31,7 +31,7 @@ Best practice at least for the current development state of Docker is to separat
 1) Start the data container.
 
 ```bash
-$ docker run -d --name inspectIT-CMR-Data -v /CMR/db -v /CMR/storages -v /CMR/config inspectit/cmr true
+$ docker run -d --name inspectIT-CMR-Data -v /CMR/db -v /CMR/storages -v /CMR/config -v /CMR/ci inspectit/cmr true
 ```
 
 2) Start the service container and use the volumes of the data container
@@ -48,7 +48,7 @@ Some people like to run Docker images with volumes being mounted to the host sys
 To run the image in this fashion, run
 
 ```bash
-$ docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 -v [local-folder]:/CMR/db -v [local-folder]:/CMR/storage inspectit/cmr
+$ docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 -v [local-folder]:/CMR/db -v [local-folder]:/CMR/storage -v [local-folder]:/CMR/config -v [local-folder]:/CMR/ci inspectit/cmr
 ```
 
 ### Running a specific version of the CMR
