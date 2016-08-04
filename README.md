@@ -37,7 +37,7 @@ $ docker run -d --name inspectIT-CMR-Data -v /CMR/db -v /CMR/storages -v /CMR/co
 2) Start the service container and use the volumes of the data container
 
 ```bash
-$ docker run -d --name inspectIT-CMR -volumes-from="inspectIT-CMR-Data" -p 8182:8182 -p 9070:9070 inspectit/cmr
+$ docker run -d --name inspectIT-CMR --volumes-from="inspectIT-CMR-Data" -p 8182:8182 -p 9070:9070 inspectit/cmr
 ```
 
 3) Backup / Access data / etc
