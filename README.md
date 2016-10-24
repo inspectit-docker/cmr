@@ -64,12 +64,14 @@ $ docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 -v config:/CMR/co
 ```bash
 $ docker run -d --name inspectIT-CMR -p 8182:8182 -p 9070:9070 -v [local-folder]:/CMR/config -v [local-folder]:/CMR/ci inspectit/cmr
 ```
-Please be aware that you need to extract the data of the two folders before you can use the upper command the first time. Otherwise empty folders will be mounted which leads to a CMR startup failure. Data extraction can be done on a running container in the following manner
+
+**Data extraction can be done on a running container in the following manner**
 
 ```bash
-$ docker run -d --name inspectIT-CMR inspectit/cmr
-$ docker cp inspectIT-CMR:/CMR/ci [local-folder]
+$ docker cp inspectIT-CMR:/CMR/db [local-folder]
+$ docker cp inspectIT-CMR:/CMR/storages [local-folder]
 $ docker cp inspectIT-CMR:/CMR/config [local-folder]
+$ docker cp inspectIT-CMR:/CMR/ci [local-folder]
 ```
 
 ### Running a specific version of the CMR

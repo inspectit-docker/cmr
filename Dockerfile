@@ -12,7 +12,9 @@ RUN apk --no-cache add ca-certificates wget \
  && wget --no-check-certificate -O /inspectit-cmr.linux.x64.zip https://github.com/inspectIT/inspectIT/releases/download/${INSPECTIT_VERSION}/inspectit-cmr.linux.x64-${INSPECTIT_VERSION}.zip \
  && unzip /inspectit-cmr.linux.x64.zip -d . \
  && rm *.apk \
- && rm /inspectit-cmr.linux.x64.zip
+ && rm /inspectit-cmr.linux.x64.zip \
+ && cp -ar /CMR/config /CMR/config.orig \
+ && cp -ar /CMR/ci /CMR/ci.orig
 
 WORKDIR /CMR
 
