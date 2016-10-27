@@ -18,7 +18,7 @@ RUN apk --no-cache add ca-certificates wget \
 
 WORKDIR /CMR
 
-VOLUME ["config", "db", "storage", "ci"]
+VOLUME ["/CMR/config", "/CMR/db", "/CMR/storage", "/CMR/ci"]
 
 EXPOSE 8182 9070
 

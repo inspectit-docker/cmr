@@ -75,16 +75,16 @@ $ docker cp inspectIT-CMR:/CMR/ci [local-folder]
 ```
 
 ### Running a specific version of the CMR
-The image inspectit/cmr:latest always refers to the latest beta version of inspectIT. If you want the stable build (currently 1.5.x) or a specific version, please use the corresponding version tag instead of latest.
+The image inspectit/cmr:latest always refers to the latest beta version of inspectIT. If you want the stable build or a specific version, please use the corresponding version tag instead of latest.
 
 **Important:** The inspectIT agent version has to match _exactly_ the version of inspectIT CMR! A version check is implemented since 1.6.3.
 
 ### Volumes
 Several volumes are created to manage the storage.
-- Metric database: All metric data is currently stored in a database on the CMR. The folder *db* is the root folder for data storage.
-- Storages: inspectIT allows to persist invocation sequences in so-called storages. All storages are kept on the server in the folder *storage*
-- Server Configuration: Configuration entries are stored below the folder *config*
-- Agent configurations: (not integrated yet) The central server stores the instrumentation and configuration for the agents. The folder *ci* is used as root folder.
+- Metric database: All metric data is currently stored in a database on the CMR. The folder */CMR/db* is the root folder for data storage.
+- Storages: inspectIT allows to persist invocation sequences in so-called storages. All storages are kept on the server in the folder */CMR/storage*
+- Server Configuration: Configuration entries are stored below the folder */CMR/config*
+- Agent configurations: The central server stores the instrumentation and configuration for the agents. The folder */CMR/ci* is used as root folder.
 
 ## Checking log output
 Easiest way to check the log output is to use
