@@ -2,7 +2,7 @@ FROM alpine:3.3
 
 MAINTAINER info.inspectit@novatec-gmbh.de
 
-ENV INSPECTIT_VERSION 1.7.9.92
+ENV INSPECTIT_VERSION 1.7.10.93
 
 COPY dumb-init /dumb-init
 
