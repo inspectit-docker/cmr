@@ -24,3 +24,4 @@ EXPOSE 8182 9070
 
 COPY run.sh run.sh
 CMD /bin/sh run.sh
+HEALTHCHECK --interval=15s CMD wget http://localhost:8182/rest/cmr/version -qO /dev/null || exit 1
